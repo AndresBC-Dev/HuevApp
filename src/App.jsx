@@ -128,10 +128,9 @@ const EggClassifierGame = () => {
           </div>
         </div>
 
-        {/* BÁSCULA CENTRAL - AJUSTES FINALES */}
+        {/* BÁSCULA CENTRAL */}
         <div className="flex-1 flex flex-col items-center justify-center">
           <div className="relative">
-            {/* Contenedor principal escalado */}
             <div 
               onDragOver={handleDragOver} 
               onDrop={handleDropOnScale} 
@@ -148,8 +147,8 @@ const EggClassifierGame = () => {
                 }}
               />
 
-              {/* BOWL: 40% MÁS GRANDE + BAJADO 100PX */}
-              <div className={`absolute top-32 left-1/2 -translate-x-1/2 z-30 transition-all duration-700 ease-out ${bowlDrop ? 'translate-y-40 scale-135' : 'translate-y-0 scale-140'}`}>
+              {/* BOWL: Ajustar top-44 para bajar/subir el bowl */}
+              <div className={`absolute top-44 left-1/2 -translate-x-1/2 z-30 transition-all duration-700 ease-out ${bowlDrop ? 'scale-138' : 'scale-140'}`}>
                 <img
                   src={basculaSprite}
                   alt="bowl"
@@ -161,30 +160,30 @@ const EggClassifierGame = () => {
                 />
               </div>
 
-              {/* PANTALLA DIGITAL: 50% MÁS PEQUEÑA */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-40 scale-75 origin-bottom">
-                <div className="bg-black/95 rounded-xl px-8 py-5 border-4 border-gray-800 shadow-2xl">
+              {/* PANTALLA DIGITAL: Ajustar px-X py-X y text-Xxl para cambiar tamaño */}
+              <div className="absolute bottom-22 left-1/2 -translate-x-1/2 z-40 origin-bottom">
+                <div className="bg-black rounded-lg px-6 py-1 border-2 border-gray-800 shadow-2xl">
                   <div className="text-right text-white">
                     {showWeight && scaleEgg ? (
                       <>
-                        <div className="text-green-400 text-6xl font-bold leading-none">
-                          {scaleEgg.weight}<span className="text-4xl">g</span>
+                        <div className="text-green-400 text-2xl font-bold leading-none">
+                          {scaleEgg.weight}<span className="text-lg">g</span>
                         </div>
-                        <div className="text-3xl font-bold mt-2" style={{ color: getCategory(scaleEgg.weight).color }}>
+                        <div className="text-sm font-bold mt-1" style={{ color: getCategory(scaleEgg.weight).color }}>
                           {getCategory(scaleEgg.weight).name}
                         </div>
                       </>
                     ) : (
-                      <div className="text-green-400 text-6xl font-bold">0.0g</div>
+                      <div className="text-green-400 text-2xl font-bold">0.0g</div>
                     )}
                   </div>
                 </div>
               </div>
 
-              {/* HUEVO EN EL BOWL - PERFECTO */}
+              {/* HUEVO EN EL BOWL */}
               {scaleEgg && (
-                <div className="absolute top-64 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
-                  <Egg size="w-44 h-52" />
+                <div className="absolute top-24 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                  <Egg size="w-22 h-30" />
                 </div>
               )}
             </div>
@@ -287,7 +286,7 @@ const EggClassifierGame = () => {
       {showSummary && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 backdrop-blur-sm">
           <div className="bg-white rounded-3xl p-12 max-w-lg shadow-2xl text-center">
-            <div className="text-6xl mb-4">¡Conteo Finalizado!</div>
+            <div className="text-6xl mb-4">🎉</div>
             <h2 className="text-5xl font-bold mb-6 text-green-600">¡Excelente trabajo!</h2>
             <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 mb-8">
               <p className="text-8xl font-bold text-green-600 mb-3">{totalEggs}</p>
