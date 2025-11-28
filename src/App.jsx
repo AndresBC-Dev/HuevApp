@@ -314,7 +314,7 @@ const EggClassifierGame = () => {
             <div className="text-center mb-8">
               <div className="text-5xl mb-3">📊</div>
               <h2 className="text-4xl font-bold text-gray-800 mb-2">Reporte de Clasificación</h2>
-              <p className="text-gray-600">Conteo completado el 28/11/2024</p>
+              <p className="text-gray-600">Conteo completado el 28/11/2025</p>
             </div>
 
             {/* Stats principales */}
